@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Snethemba Promise Ngcobo — IT Engineer & Developer</title>
-<meta name="description" content="IT Engineer and Developer based in South Africa. Enterprise M365 administration, network infrastructure, Ansible automation, and full-stack development.">
-<meta name="keywords" content="IT Engineer, Systems Administrator, Microsoft 365, Active Directory, Ansible, Next.js, TypeScript, South Africa, Hlabisa">
+<meta name="description" content="IT Engineer and Developer based in South Africa. Enterprise M365 administration, network infrastructure, Ansible automation, and full-stack development. NDip Computer Systems Engineering (NQF Level 6) graduate.">
+<meta name="keywords" content="IT Engineer, Systems Administrator, Microsoft 365, Active Directory, Ansible, Next.js, TypeScript, South Africa, Hlabisa, NDip Computer Systems">
 <meta name="author" content="Snethemba Promise Ngcobo">
 <meta name="theme-color" content="#0D1117">
 
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:;">
 
 <meta property="og:title" content="Snethemba Promise Ngcobo — IT Engineer & Developer">
-<meta property="og:description" content="Enterprise IT infrastructure, systems administration, and full-stack development. Based in South Africa.">
+<meta property="og:description" content="Enterprise IT infrastructure, systems administration, and full-stack development. NDip Computer Systems Engineering graduate based in South Africa.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://spvngcobo.github.io">
 <meta name="twitter:card" content="summary_large_image">
@@ -256,74 +256,6 @@ section { padding: 100px 0; border-top: 1px solid var(--border); position: relat
 .about-card p strong { color: var(--text); font-weight: 500; }
 .about-card.featured { background: rgba(88,166,255,0.05); border-left: 3px solid var(--blue); }
 
-/* ── SKILLS ─────────────────────────────────────────── */
-.skills-layout { display: grid; grid-template-columns: 220px 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
-.skills-nav { background: var(--surface); padding: 8px 0; }
-.skill-nav-item {
-  display: block; width: 100%; text-align: left; padding: 12px 20px; font-family: var(--font-mono); font-size: 0.78rem;
-  color: var(--muted); transition: all 0.15s; border-left: 2px solid transparent; cursor: pointer;
-}
-.skill-nav-item:hover { color: var(--text); background: rgba(88,166,255,0.05); }
-.skill-nav-item[aria-selected="true"] { color: var(--blue); border-left-color: var(--blue); background: rgba(88,166,255,0.08); }
-.skills-panel { background: var(--bg); }
-.skill-pane { display: none; padding: 36px; }
-.skill-pane.active { display: block; }
-.skill-pane-title { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 20px; }
-.skill-chips { display: flex; flex-wrap: wrap; gap: 10px; }
-.chip {
-  font-family: var(--font-mono); font-size: 0.78rem; padding: 6px 14px; background: var(--surface);
-  border: 1px solid var(--border-hi); border-radius: var(--radius-sm); color: var(--muted); transition: all 0.15s; cursor: default;
-}
-.chip:hover { border-color: var(--blue); color: var(--blue); background: rgba(88,166,255,0.07); }
-.chip.core { border-color: rgba(88,166,255,0.4); color: var(--blue); background: rgba(88,166,255,0.07); }
-
-/* ── EXPERIENCE ─────────────────────────────────────── */
-.exp-list { display: flex; flex-direction: column; gap: 2px; }
-.exp-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: border-color 0.2s; }
-.exp-card:hover { border-color: var(--border-hi); }
-.exp-card.open { border-color: rgba(88,166,255,0.4); }
-.exp-head { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; padding: 28px 32px; width: 100%; text-align: left; cursor: pointer; }
-.exp-head:hover .exp-toggle { color: var(--blue); }
-.exp-meta { display: flex; flex-direction: column; gap: 6px; }
-.exp-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--text); }
-.exp-company { font-family: var(--font-mono); font-size: 0.8rem; color: var(--blue); }
-.exp-info { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
-.exp-date { font-family: var(--font-mono); font-size: 0.75rem; color: var(--faint); padding: 4px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); }
-.exp-type { font-family: var(--font-mono); font-size: 0.72rem; color: var(--faint); }
-.exp-toggle { font-size: 1.1rem; color: var(--faint); transition: all 0.25s; flex-shrink: 0; }
-.exp-card.open .exp-toggle { transform: rotate(45deg); color: var(--blue); }
-.exp-body { display: none; padding: 0 32px 28px; border-top: 1px solid var(--border); padding-top: 24px; }
-.exp-card.open .exp-body { display: block; }
-.exp-bullets { display: flex; flex-direction: column; gap: 10px; }
-.exp-bullets li { display: flex; gap: 12px; font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
-.exp-bullets li::before { content: '→'; color: var(--blue); flex-shrink: 0; margin-top: 1px; font-family: var(--font-mono); font-size: 0.85rem; }
-.exp-tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-.exp-tag { font-family: var(--font-mono); font-size: 0.72rem; padding: 4px 10px; background: rgba(88,166,255,0.07); border: 1px solid rgba(88,166,255,0.2); border-radius: var(--radius-sm); color: var(--blue); }
-
-/* ── PROJECTS ───────────────────────────────────────── */
-.projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.project-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
-  padding: 28px; display: flex; flex-direction: column; gap: 14px; transition: all 0.2s; position: relative; overflow: hidden;
-}
-.project-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--blue), var(--purple)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
-}
-.project-card:hover { border-color: var(--border-hi); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.3); }
-.project-card:hover::before { transform: scaleX(1); }
-.project-card.featured { border-color: rgba(88,166,255,0.3); background: rgba(88,166,255,0.04); }
-.project-card.featured::before { transform: scaleX(1); }
-.proj-top { display: flex; justify-content: space-between; align-items: flex-start; }
-.proj-icon { font-size: 1.4rem; }
-.proj-links { display: flex; gap: 10px; flex-wrap: wrap;}
-.proj-link { font-family: var(--font-mono); font-size: 0.8rem; color: var(--faint); transition: color 0.15s; text-decoration: none; }
-.proj-link:hover { color: var(--blue); }
-.proj-title { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--text); line-height: 1.3; }
-.proj-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.7; flex: 1; }
-.proj-stack { display: flex; flex-wrap: wrap; gap: 6px; }
-.stack-tag { font-family: var(--font-mono); font-size: 0.7rem; padding: 3px 9px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--faint); }
-
 /* ── EDUCATION ──────────────────────────────────────── */
 .edu-grid { display: flex; flex-direction: column; gap: 12px; }
 .edu-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 32px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start; }
@@ -333,6 +265,7 @@ section { padding: 100px 0; border-top: 1px solid var(--border); position: relat
 .edu-inst { font-family: var(--font-mono); font-size: 0.78rem; color: var(--blue); margin-bottom: 10px; }
 .edu-detail { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
 .edu-year { font-family: var(--font-mono); font-size: 0.75rem; color: var(--faint); padding: 4px 10px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); white-space: nowrap; }
+.edu-cert { font-family: var(--font-mono); font-size: 0.72rem; color: var(--green); margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); }
 
 /* ── CONTACT ────────────────────────────────────────── */
 #contact { padding: 100px 0 60px; border-top: 1px solid var(--border); }
@@ -380,11 +313,7 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
   :root { --gutter: 32px; }
   .hero-grid { grid-template-columns: 1fr; gap: 48px; }
   .terminal { max-width: 560px; }
-  .projects-grid, .about-grid { grid-template-columns: repeat(2, 1fr); }
-  .skills-layout { grid-template-columns: 1fr; }
-  .skills-nav { display: flex; flex-wrap: wrap; padding: 12px; gap: 6px; }
-  .skill-nav-item { width: auto; padding: 7px 14px; border-left: none; border: 1px solid var(--border); border-radius: var(--radius-sm); }
-  .skill-nav-item[aria-selected="true"] { border-color: var(--blue); }
+  .about-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
   :root { --gutter: 20px; }
@@ -394,13 +323,10 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
   .hamburger { display: flex; }
   .hero { padding: 100px 0 60px; }
   .hero-stats { grid-template-columns: repeat(2, 1fr); }
-  .projects-grid, .about-grid, .contact-layout { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: 1fr; }
   .contact-info { position: relative; top: 0; }
   .form-row { grid-template-columns: 1fr; }
   section { padding: 72px 0; }
-  .exp-head { padding: 22px 20px; }
-  .exp-body { padding: 0 20px 22px; padding-top: 18px; }
-  .edu-card { grid-template-columns: 1fr; }
 }
 
 /* Reduced Motion Override for Accessibility */
@@ -421,9 +347,6 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
     <a href="#" class="nav-logo">SPN<span>.</span></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -458,21 +381,20 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
               <h1 class="hero-name">Snethemba<br><em>Promise Ngcobo</em></h1>
           </div>
           
-          <p class="hero-role">Junior IT Technician & Software Developer</p>
+          <p class="hero-role">IT Systems Trainer & Software Developer</p>
           <p class="hero-desc">
             Enterprise IT infrastructure, systems administration, and full-stack development.
-            <strong>Two unprompted production tools shipped</strong> at enterprise scale —
-            a Next.js enterprise simulator at a Top 5 SA law firm and Ansible automation suite at a high-volume ISP. Both without being asked.
+            <strong>NDip Computer Systems Engineering (NQF Level 6) — Completed 15 December 2024</strong>. 
+            Currently trainer at ENSafrica and founder of ATHASH Digital Solutions, delivering enterprise training and custom software solutions.
           </p>
           <div class="hero-stats">
             <div class="stat"><span class="stat-n">200+</span><span class="stat-l">Users<br>Trained</span></div>
-            <div class="stat"><span class="stat-n">150+</span><span class="stat-l">Fibre<br>Installs</span></div>
-            <div class="stat"><span class="stat-n">25+</span><span class="stat-l">Tickets<br>/Week</span></div>
+            <div class="stat"><span class="stat-n">2</span><span class="stat-l">Years<br>Experience</span></div>
             <div class="stat"><span class="stat-n">6+</span><span class="stat-l">Production<br>Platforms</span></div>
+            <div class="stat"><span class="stat-n">NQF 6</span><span class="stat-l">Certified<br>Engineer</span></div>
           </div>
           <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">View Projects →</a>
-            <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+            <a href="#contact" class="btn btn-primary">Get in Touch →</a>
             <a href="SP_Ngcobo_CV_Portfolio.pdf" download class="btn btn-ghost">↓ CV</a>
           </div>
         </div>
@@ -485,315 +407,23 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
     <div class="container">
       <p class="section-label">Background</p>
       <h2 class="section-title">About Me</h2>
-      <p class="section-sub">IT professional with enterprise experience across systems administration, network infrastructure, helpdesk support, and full-stack software development. Based in Hlabisa, KZN — open to remote and on-site opportunities.</p>
+      <p class="section-sub">IT professional with enterprise experience across systems administration, network infrastructure, and full-stack software development. Tshwane University of Technology graduate. Based in Hlabisa, KZN.</p>
       <div class="about-grid">
         <article class="about-card">
-          <span class="about-icon" aria-hidden="true">📍</span>
-          <h3>Where I'm From</h3>
-          <p>Born and raised in Hlabisa, KwaZulu-Natal. Pursuing NDip: Engineering: Computer Systems, NQF Level 6 at Tshwane University of Technology (graduating 2025). I got here by building things — not just studying them.</p>
+          <span class="about-icon" aria-hidden="true">🎓</span>
+          <h3>Certified Engineer</h3>
+          <p><strong>NDip: Engineering: Computer Systems (NQF Level 6)</strong> — Tshwane University of Technology. Completed 15 December 2024, officially certified 19 January 2026. Comprehensive qualification covering network systems, operating systems, programming, and database management.</p>
         </article>
         <article class="about-card featured">
           <span class="about-icon" aria-hidden="true">⚡</span>
-          <h3>What Sets Me Apart</h3>
-          <p>I don't wait to be told. At ENSafrica, I spotted a gap in the M365 rollout and built a <strong>Next.js enterprise simulator</strong> independently. At Adnexus, I built <strong>Ansible automation</strong> unprompted, reducing config effort by 60%.</p>
+          <h3>Current Roles</h3>
+          <p><strong>ENSafrica:</strong> IT Systems Trainer delivering enterprise training to 200+ users. <strong>ATHASH Digital Solutions:</strong> Founder and Lead Developer, delivering custom web solutions and IT services to SME and enterprise clients.</p>
         </article>
         <article class="about-card">
           <span class="about-icon" aria-hidden="true">🔧</span>
-          <h3>How I Work</h3>
-          <p>Systems-first thinking. Process-driven approach. I treat infrastructure like code — automated, documented, repeatable. Strong mentoring background; I've trained 200+ enterprise users and love knowledge transfer.</p>
+          <h3>Engineering Approach</h3>
+          <p>Systems-first thinking. Process-driven problem solving. I treat infrastructure and code as equally important. Strong background in training and knowledge transfer. Committed to shipping production-ready solutions that solve real business problems.</p>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills" class="reveal">
-    <div class="container">
-      <p class="section-label">Capabilities</p>
-      <h2 class="section-title">Technical Skills</h2>
-      <p class="section-sub">Core competencies in enterprise systems, automation, and full-stack development. Always learning the next tool.</p>
-      <div class="skills-layout">
-        <div class="skills-nav">
-          <button class="skill-nav-item" data-skill="languages" aria-selected="true">Languages</button>
-          <button class="skill-nav-item" data-skill="frameworks">Frameworks</button>
-          <button class="skill-nav-item" data-skill="infrastructure">Infrastructure</button>
-          <button class="skill-nav-item" data-skill="databases">Databases</button>
-          <button class="skill-nav-item" data-skill="tools">Tools & DevOps</button>
-        </div>
-        <div class="skills-panel">
-          <div class="skill-pane active" data-skill="languages">
-            <h3 class="skill-pane-title">Programming Languages</h3>
-            <div class="skill-chips">
-              <span class="chip core">Python</span>
-              <span class="chip core">JavaScript</span>
-              <span class="chip core">TypeScript</span>
-              <span class="chip">Java</span>
-              <span class="chip">C++</span>
-              <span class="chip">SQL</span>
-              <span class="chip">Bash/PowerShell</span>
-            </div>
-          </div>
-          <div class="skill-pane" data-skill="frameworks">
-            <h3 class="skill-pane-title">Frameworks & Libraries</h3>
-            <div class="skill-chips">
-              <span class="chip core">React</span>
-              <span class="chip core">Next.js</span>
-              <span class="chip core">Node.js</span>
-              <span class="chip">Express</span>
-              <span class="chip">FastAPI</span>
-              <span class="chip">Django</span>
-              <span class="chip">REST APIs</span>
-            </div>
-          </div>
-          <div class="skill-pane" data-skill="infrastructure">
-            <h3 class="skill-pane-title">Enterprise Infrastructure</h3>
-            <div class="skill-chips">
-              <span class="chip core">Microsoft 365</span>
-              <span class="chip core">Active Directory</span>
-              <span class="chip core">Ansible</span>
-              <span class="chip">MikroTik / RouterOS</span>
-              <span class="chip">Network Administration</span>
-              <span class="chip">Systems Administration</span>
-              <span class="chip">Helpdesk Support</span>
-            </div>
-          </div>
-          <div class="skill-pane" data-skill="databases">
-            <h3 class="skill-pane-title">Databases & Storage</h3>
-            <div class="skill-chips">
-              <span class="chip core">PostgreSQL</span>
-              <span class="chip core">MySQL</span>
-              <span class="chip">MongoDB</span>
-              <span class="chip">Firebase</span>
-              <span class="chip">Redis</span>
-            </div>
-          </div>
-          <div class="skill-pane" data-skill="tools">
-            <h3 class="skill-pane-title">Tools & DevOps</h3>
-            <div class="skill-chips">
-              <span class="chip core">Git / GitHub</span>
-              <span class="chip core">Docker</span>
-              <span class="chip">AWS</span>
-              <span class="chip">Azure</span>
-              <span class="chip">CI/CD Pipelines</span>
-              <span class="chip">Arduino / IoT</span>
-              <span class="chip">Linux Administration</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience" class="reveal">
-    <div class="container">
-      <p class="section-label">Work History</p>
-      <h2 class="section-title">Experience</h2>
-      <p class="section-sub">Proven track record delivering enterprise solutions and training complex systems. Two major production tools shipped independently.</p>
-      <div class="exp-list">
-        
-        <div class="exp-card">
-          <div class="exp-head">
-            <div class="exp-meta">
-              <h3 class="exp-title">IT Systems Trainer & Software Engineer</h3>
-              <p class="exp-company">ENSafrica (Top 5 SA Law Firm)</p>
-              <div class="exp-info">
-                <span class="exp-date">2024 – Present</span>
-                <span class="exp-type">Full-time</span>
-              </div>
-            </div>
-            <span class="exp-toggle">+</span>
-          </div>
-          <div class="exp-body">
-            <ul class="exp-bullets">
-              <li>Architected and deployed ENSAT — enterprise asset management platform with live tracking, online forms, and contract management system for 200+ users</li>
-              <li>Developed EnsEmulator — Next.js enterprise training simulator, reducing new hire onboarding time by 40% (3 weeks → 2 weeks)</li>
-              <li>Trained enterprise users on complex M365 backend systems; mentored staff on workflow automation and compliance procedures</li>
-              <li>Implemented automated workflows reducing manual administrative work by 50%</li>
-              <li>Managed Microsoft 365 rollout, Active Directory configuration, and systems integration</li>
-            </ul>
-            <div class="exp-tag-row">
-              <span class="exp-tag">Next.js</span>
-              <span class="exp-tag">TypeScript</span>
-              <span class="exp-tag">React</span>
-              <span class="exp-tag">Microsoft 365</span>
-              <span class="exp-tag">Active Directory</span>
-              <span class="exp-tag">Systems Administration</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="exp-card">
-          <div class="exp-head">
-            <div class="exp-meta">
-              <h3 class="exp-title">Network Infrastructure & Automation Specialist</h3>
-              <p class="exp-company">Adnexus (High-Volume ISP)</p>
-              <div class="exp-info">
-                <span class="exp-date">2023 – 2024</span>
-                <span class="exp-type">Full-time</span>
-              </div>
-            </div>
-            <span class="exp-toggle">+</span>
-          </div>
-          <div class="exp-body">
-            <ul class="exp-bullets">
-              <li>Designed and deployed Network Automation Suite using Python + Ansible for router provisioning and monitoring</li>
-              <li>Reduced network configuration effort by 60% through automated deployment workflows</li>
-              <li>Managed MikroTik RouterOS, network topology optimization, and MPLS configurations</li>
-              <li>Resolved 25+ support tickets per week; mentored junior technicians on infrastructure troubleshooting</li>
-              <li>Installed and commissioned 150+ fibre connections; managed customer deployment lifecycle</li>
-            </ul>
-            <div class="exp-tag-row">
-              <span class="exp-tag">Python</span>
-              <span class="exp-tag">Ansible</span>
-              <span class="exp-tag">MikroTik</span>
-              <span class="exp-tag">Network Admin</span>
-              <span class="exp-tag">Automation</span>
-              <span class="exp-tag">Linux</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="exp-card">
-          <div class="exp-head">
-            <div class="exp-meta">
-              <h3 class="exp-title">B-BBEE Compliance & Systems Developer</h3>
-              <p class="exp-company">Zaziza Nexus</p>
-              <div class="exp-info">
-                <span class="exp-date">2022 – 2023</span>
-                <span class="exp-type">Full-time</span>
-              </div>
-            </div>
-            <span class="exp-toggle">+</span>
-          </div>
-          <div class="exp-body">
-            <ul class="exp-bullets">
-              <li>Developed Zaziza Nexus — multi-tenant SaaS platform for SME business management, team collaboration, and workflow automation</li>
-              <li>Automated B-BBEE compliance reporting for enterprise clients, reducing manual audit time by 45%</li>
-              <li>Built REST APIs and full-stack application architecture for scalable deployments</li>
-              <li>Managed PostgreSQL databases, Firebase integrations, and real-time data synchronization</li>
-            </ul>
-            <div class="exp-tag-row">
-              <span class="exp-tag">Node.js</span>
-              <span class="exp-tag">React</span>
-              <span class="exp-tag">PostgreSQL</span>
-              <span class="exp-tag">Firebase</span>
-              <span class="exp-tag">REST APIs</span>
-              <span class="exp-tag">SaaS</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="reveal">
-    <div class="container">
-      <p class="section-label">Featured Work</p>
-      <h2 class="section-title">Projects</h2>
-      <p class="section-sub">Production-ready tools that solved real problems at enterprise scale.</p>
-      <div class="projects-grid">
-        
-        <div class="project-card featured">
-          <div class="proj-top">
-            <span class="proj-icon">🏢</span>
-            <div class="proj-links">
-              <a href="https://github.com/SPVNgcobo" class="proj-link">GitHub →</a>
-            </div>
-          </div>
-          <h3 class="proj-title">ENSAT — Enterprise Asset Management</h3>
-          <p class="proj-desc">Live tracking, online forms, contract management. Deployed to 200+ users across ENSafrica. Reduced M365 rollout friction by 40%.</p>
-          <div class="proj-stack">
-            <span class="stack-tag">Next.js</span>
-            <span class="stack-tag">TypeScript</span>
-            <span class="stack-tag">React</span>
-            <span class="stack-tag">PostgreSQL</span>
-          </div>
-        </div>
-
-        <div class="project-card featured">
-          <div class="proj-top">
-            <span class="proj-icon">🎓</span>
-            <div class="proj-links">
-              <a href="https://github.com/SPVNgcobo" class="proj-link">GitHub →</a>
-            </div>
-          </div>
-          <h3 class="proj-title">EnsEmulator — Enterprise Simulator</h3>
-          <p class="proj-desc">Training environment for complex backend systems. Reduced new hire onboarding time by 40% (3 weeks → 2 weeks).</p>
-          <div class="proj-stack">
-            <span class="stack-tag">Next.js</span>
-            <span class="stack-tag">TypeScript</span>
-            <span class="stack-tag">Node.js</span>
-            <span class="stack-tag">Firebase</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="proj-top">
-            <span class="proj-icon">🤖</span>
-            <div class="proj-links">
-              <a href="https://github.com/SPVNgcobo" class="proj-link">GitHub →</a>
-            </div>
-          </div>
-          <h3 class="proj-title">Network Automation Suite</h3>
-          <p class="proj-desc">Router provisioning and monitoring automation. 60% reduction in network configuration effort across ISP operations.</p>
-          <div class="proj-stack">
-            <span class="stack-tag">Python</span>
-            <span class="stack-tag">Ansible</span>
-            <span class="stack-tag">MikroTik</span>
-            <span class="stack-tag">Bash</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="proj-top">
-            <span class="proj-icon">📊</span>
-            <div class="proj-links">
-              <a href="https://github.com/SPVNgcobo" class="proj-link">GitHub →</a>
-            </div>
-          </div>
-          <h3 class="proj-title">Zaziza Nexus — Multi-Tenant SaaS</h3>
-          <p class="proj-desc">SME business management platform. Team collaboration, workflow automation, and B-BBEE compliance reporting.</p>
-          <div class="proj-stack">
-            <span class="stack-tag">Node.js</span>
-            <span class="stack-tag">React</span>
-            <span class="stack-tag">PostgreSQL</span>
-            <span class="stack-tag">REST APIs</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="proj-top">
-            <span class="proj-icon">🔐</span>
-            <div class="proj-links">
-              <a href="https://github.com/SPVNgcobo" class="proj-link">GitHub →</a>
-            </div>
-          </div>
-          <h3 class="proj-title">B-BBEE Compliance Automation</h3>
-          <p class="proj-desc">Automated compliance reporting system for enterprise clients. Reduced manual audit time by 45%.</p>
-          <div class="proj-stack">
-            <span class="stack-tag">Python</span>
-            <span class="stack-tag">FastAPI</span>
-            <span class="stack-tag">PostgreSQL</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="proj-top">
-            <span class="proj-icon">🌐</span>
-            <div class="proj-links">
-              <a href="https://github.com/SPVNgcobo" class="proj-link">GitHub →</a>
-            </div>
-          </div>
-          <h3 class="proj-title">IoT Environmental Monitoring</h3>
-          <p class="proj-desc">Real-time environmental awareness system with Arduino integration and live dashboard visualization.</p>
-          <div class="proj-stack">
-            <span class="stack-tag">Arduino</span>
-            <span class="stack-tag">Python</span>
-            <span class="stack-tag">IoT</span>
-            <span class="stack-tag">React</span>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -802,96 +432,92 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
     <div class="container">
       <p class="section-label">Qualifications</p>
       <h2 class="section-title">Education & Certifications</h2>
-      <p class="section-sub">Formal training and industry certifications validating technical expertise.</p>
+      <p class="section-sub">Formal qualifications and industry certifications validating technical expertise and commitment to professional development.</p>
       <div class="edu-grid">
         
-        <div class="edu-card primary">
+        <article class="edu-card primary">
           <div>
             <h3 class="edu-qual">National Diploma: Engineering: Computer Systems</h3>
-            <p class="edu-inst">Tshwane University of Technology (TUT)</p>
-            <p class="edu-detail">NQF Level 6 qualification. Comprehensive systems engineering curriculum covering network infrastructure, systems administration, software development, and database management. Expected completion: 2025.</p>
+            <p class="edu-inst">Tshwane University of Technology (TUT) — NQF Level 6 (SAQA Registered)</p>
+            <p class="edu-detail">Successfully completed 15 December 2024. Official certification issued 19 January 2026, Student Number 219250649. Comprehensive engineering curriculum covering network infrastructure, systems administration, operating systems, programming (Python, Java, C++), database management, and systems analysis. Equipped with advanced technical skills in enterprise IT infrastructure and full-stack software development.</p>
+            <p class="edu-cert">✓ Officially Certified | Student #219250649</p>
           </div>
-          <span class="edu-year">Expected 2025</span>
-        </div>
+          <span class="edu-year">Dec 2024</span>
+        </article>
 
-        <div class="edu-card">
+        <article class="edu-card">
           <div>
-            <h3 class="edu-qual">CompTIA A+ Certified</h3>
-            <p class="edu-inst">CompTIA</p>
-            <p class="edu-detail">Industry-recognized certification validating IT fundamentals, hardware/software troubleshooting, networking, and security principles.</p>
+            <h3 class="edu-qual">Mastering Ansible Automation for Network Engineers</h3>
+            <p class="edu-inst">Udemy · 22 Hours Comprehensive Training</p>
+            <p class="edu-detail">Advanced course in infrastructure automation, covering playbooks, inventory management, roles, network device automation, and infrastructure-as-code practices. Hands-on training in enterprise automation workflows applicable to production environments.</p>
           </div>
-          <span class="edu-year">2024</span>
-        </div>
+          <span class="edu-year">Nov 2024</span>
+        </article>
 
-        <div class="edu-card">
+        <article class="edu-card">
           <div>
-            <h3 class="edu-qual">Microsoft 365 Fundamentals</h3>
-            <p class="edu-inst">Microsoft</p>
-            <p class="edu-detail">MS-900 certification demonstrating knowledge of cloud services, productivity applications, and enterprise collaboration tools.</p>
+            <h3 class="edu-qual">National Certificate: IT Technical Support</h3>
+            <p class="edu-inst">MICT SETA — NQF Level 4 (SAQA Registered)</p>
+            <p class="edu-detail">Enterprise IT support, hardware and software troubleshooting, network fundamentals, and end-user support. Practical qualification aligned with industry standards and best practices.</p>
           </div>
-          <span class="edu-year">2024</span>
-        </div>
+          <span class="edu-year">Nov 2024</span>
+        </article>
 
-        <div class="edu-card">
+        <article class="edu-card">
           <div>
-            <h3 class="edu-qual">Ansible Fundamentals</h3>
-            <p class="edu-inst">Red Hat (Self-Study)</p>
-            <p class="edu-detail">Practical experience in infrastructure automation, playbook development, and configuration management at scale.</p>
+            <h3 class="edu-qual">National Senior Certificate</h3>
+            <p class="edu-inst">Mbopha High School · Hlabisa, KwaZulu-Natal</p>
+            <p class="edu-detail">Completed senior secondary education with distinction. Endorsed for Bachelor's Degree admission. Developed foundational knowledge in mathematics, sciences, and problem-solving skills.</p>
           </div>
-          <span class="edu-year">2024</span>
-        </div>
-
+          <span class="edu-year">Dec 2016</span>
+        </article>
       </div>
     </div>
   </section>
 
   <section id="contact" class="reveal">
     <div class="container">
-      <p class="section-label">Reach Out</p>
-      <h2 class="section-title">Let's Talk</h2>
+      <p class="section-label">Get in Touch</p>
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="section-sub">IT Systems Trainer and Software Engineer based in South Africa. Open to remote roles, on-site positions, and relocation opportunities.</p>
       <div class="contact-layout">
-        
         <div class="contact-form-card">
-          <form id="contactForm" method="POST">
-            <div class="form-grid">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="email" required>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="company">Company</label>
-                  <input type="text" id="company" name="company">
-                </div>
-                <div class="form-group">
-                  <label for="subject">Subject</label>
-                  <select id="subject" name="subject" required>
-                    <option value="">Select...</option>
-                    <option value="Opportunity">Job Opportunity</option>
-                    <option value="Collaboration">Collaboration</option>
-                    <option value="Freelance">Freelance Project</option>
-                    <option value="Question">Question</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
+          <form id="contactForm" class="form-grid">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="your@email.com">
               </div>
               <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Company name">
               </div>
-              <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
-              <div class="form-status"></div>
             </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject" required>
+                <option value="">Select a topic</option>
+                <option value="Job Opportunity">Job Opportunity</option>
+                <option value="Consulting/Freelance">Consulting/Freelance</option>
+                <option value="Training">Training Project</option>
+                <option value="Collaboration">Collaboration</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell me about the opportunity..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit">Send via Email →</button>
+            <div id="formStatus" class="form-status" role="alert" aria-live="polite"></div>
           </form>
         </div>
 
-        <div class="contact-info">
+        <aside class="contact-info">
           <div class="contact-block">
             <h3>Direct Contact</h3>
             <div class="c-item">
@@ -902,27 +528,29 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
               </div>
             </div>
             <div class="c-item">
+              <span class="c-icon">📱</span>
+              <div>
+                <p class="c-label">Phone</p>
+                <p class="c-val"><a href="tel:+27820569497">+27 82 056 9497</a></p>
+              </div>
+            </div>
+            <div class="c-item">
               <span class="c-icon">📍</span>
               <div>
                 <p class="c-label">Location</p>
                 <p class="c-val">Hlabisa, KwaZulu-Natal</p>
-                <p class="c-sub">South Africa (Open to remote/on-site)</p>
+                <p class="c-sub">South Africa (Open to relocation)</p>
               </div>
             </div>
           </div>
           <div class="contact-block">
             <h3>Connect</h3>
             <div class="social-row">
-              <a href="https://github.com/SPVNgcobo" class="social-link" target="_blank" rel="noopener noreferrer">
-                <span>GitHub</span> →
-              </a>
-              <a href="https://linkedin.com/in/spngcobo" class="social-link" target="_blank" rel="noopener noreferrer">
-                <span>LinkedIn</span> →
-              </a>
+              <a href="https://github.com/SPVNgcobo" target="_blank" rel="noopener noreferrer" class="social-link">GitHub →</a>
+              <a href="https://linkedin.com/in/spngcobo" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn →</a>
             </div>
           </div>
-        </div>
-
+        </aside>
       </div>
     </div>
   </section>
@@ -931,7 +559,7 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
 
 <footer>
   <div class="footer-inner">
-    <p class="footer-copy">© 2025 Snethemba Promise Ngcobo. All rights reserved.</p>
+    <p class="footer-copy">© 2026 Snethemba Promise Ngcobo. All rights reserved.</p>
     <p class="footer-sig">Built with pragmatism & care.</p>
   </div>
 </footer>
