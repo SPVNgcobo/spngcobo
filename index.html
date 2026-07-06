@@ -267,7 +267,7 @@ section { padding: 100px 0; border-top: 1px solid var(--border); position: relat
 .skill-nav-item[aria-selected="true"] { color: var(--blue); border-left-color: var(--blue); background: rgba(88,166,255,0.08); }
 .skills-panel { background: var(--bg); }
 .skill-pane { display: none; padding: 36px; }
-.skill-pane:not([hidden]) { display: block; }
+.skill-pane.active { display: block; }
 .skill-pane-title { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 20px; }
 .skill-chips { display: flex; flex-wrap: wrap; gap: 10px; }
 .chip {
@@ -282,7 +282,7 @@ section { padding: 100px 0; border-top: 1px solid var(--border); position: relat
 .exp-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: border-color 0.2s; }
 .exp-card:hover { border-color: var(--border-hi); }
 .exp-card.open { border-color: rgba(88,166,255,0.4); }
-.exp-head { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; padding: 28px 32px; width: 100%; text-align: left; }
+.exp-head { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; padding: 28px 32px; width: 100%; text-align: left; cursor: pointer; }
 .exp-head:hover .exp-toggle { color: var(--blue); }
 .exp-meta { display: flex; flex-direction: column; gap: 6px; }
 .exp-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--text); }
@@ -326,7 +326,7 @@ section { padding: 100px 0; border-top: 1px solid var(--border); position: relat
 
 /* ── EDUCATION ──────────────────────────────────────── */
 .edu-grid { display: flex; flex-direction: column; gap: 12px; }
-.edu-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 32px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start; transition: border-color 0.2s; }
+.edu-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 32px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start; }
 .edu-card:hover { border-color: var(--border-hi); }
 .edu-card.primary { border-left: 3px solid var(--blue); }
 .edu-qual { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
@@ -342,12 +342,12 @@ section { padding: 100px 0; border-top: 1px solid var(--border); position: relat
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .form-group { display: flex; flex-direction: column; gap: 7px; }
 .form-group label { font-family: var(--font-mono); font-size: 0.72rem; color: var(--faint); text-transform: uppercase; letter-spacing: 0.8px; }
-.form-group input, .form-group select, .form-group textarea { background: var(--bg); border: 1px solid var(--border-hi); border-radius: var(--radius-sm); padding: 11px 14px; font-size: 0.9rem; color: var(--text); font-family: var(--font-body); outline: none; transition: border-color 0.2s; width: 100%; }
+.form-group input, .form-group select, .form-group textarea { background: var(--bg); border: 1px solid var(--border-hi); border-radius: var(--radius-sm); padding: 11px 14px; font-size: 0.9rem; color: var(--text); font-family: inherit; }
 .form-group input::placeholder, .form-group textarea::placeholder { color: var(--faint); }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(88,166,255,0.1); }
 .form-group textarea { resize: vertical; min-height: 100px; }
 .btn-submit { width: 100%; justify-content: center; margin-top: 6px; }
-.form-status { display: none; padding: 12px 16px; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.8rem; margin-top: 4px; }
+.form-status { display: none; padding: 12px 16px; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.8rem; margin-top: 4px; line-height: 1.5; }
 .form-status.success { display: block; background: rgba(63,185,80,0.1); border: 1px solid rgba(63,185,80,0.3); color: var(--green); }
 .form-status.error { display: block; background: rgba(247,129,102,0.1); border: 1px solid rgba(247,129,102,0.3); color: var(--orange); }
 
@@ -362,7 +362,7 @@ section { padding: 100px 0; border-top: 1px solid var(--border); position: relat
 .c-val a:hover { color: var(--blue); }
 .c-sub { font-size: 0.78rem; color: var(--faint); margin-top: 2px; }
 .social-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.social-link { display: flex; align-items: center; justify-content: center; gap: 7px; padding: 10px; background: var(--bg); border: 1px solid var(--border-hi); border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); transition: all 0.15s; }
+.social-link { display: flex; align-items: center; justify-content: center; gap: 7px; padding: 10px; background: var(--bg); border: 1px solid var(--border-hi); border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.75rem; color: var(--faint); transition: all 0.15s; text-decoration: none; }
 .social-link:hover { border-color: var(--blue); color: var(--blue); background: rgba(88,166,255,0.07); }
 
 /* ── FOOTER ─────────────────────────────────────────── */
@@ -389,7 +389,7 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
 @media (max-width: 768px) {
   :root { --gutter: 20px; }
   .nav-links { display: none; position: absolute; top: 60px; left: 0; right: 0; flex-direction: column; background: var(--bg); border-bottom: 1px solid var(--border); padding: 24px 20px; gap: 20px; }
-  .nav-links[aria-hidden="false"] { display: flex; }
+  .nav-links.active { display: flex; }
   .nav-cta { display: none; }
   .hamburger { display: flex; }
   .hero { padding: 100px 0 60px; }
@@ -419,7 +419,7 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
 <nav id="navbar">
   <div class="nav-inner">
     <a href="#" class="nav-logo">SPN<span>.</span></a>
-    <ul class="nav-links" id="navLinks" aria-hidden="true">
+    <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -462,8 +462,7 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
           <p class="hero-desc">
             Enterprise IT infrastructure, systems administration, and full-stack development.
             <strong>Two unprompted production tools shipped</strong> at enterprise scale —
-            an Ansible automation suite at a high-volume ISP and a Next.js enterprise simulator
-            at a Top 5 SA law firm. Both without being asked.
+            a Next.js enterprise simulator at a Top 5 SA law firm and Ansible automation suite at a high-volume ISP. Both without being asked.
           </p>
           <div class="hero-stats">
             <div class="stat"><span class="stat-n">200+</span><span class="stat-l">Users<br>Trained</span></div>
@@ -486,22 +485,22 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
     <div class="container">
       <p class="section-label">Background</p>
       <h2 class="section-title">About Me</h2>
-      <p class="section-sub">IT professional with enterprise experience across systems administration, network infrastructure, helpdesk, and software development. Based in Hlabisa, KZN — open to relocation.</p>
+      <p class="section-sub">IT professional with enterprise experience across systems administration, network infrastructure, helpdesk support, and full-stack software development. Based in Hlabisa, KZN — open to remote and on-site opportunities.</p>
       <div class="about-grid">
         <article class="about-card">
           <span class="about-icon" aria-hidden="true">📍</span>
           <h3>Where I'm From</h3>
-          <p>Born and raised in Hlabisa, KwaZulu-Natal. NDip: Engineering: Computer Systems, NQF Level 6 (TUT, 2025). I got here by building things — not just studying them.</p>
+          <p>Born and raised in Hlabisa, KwaZulu-Natal. Pursuing NDip: Engineering: Computer Systems, NQF Level 6 at Tshwane University of Technology (graduating 2025). I got here by building things — not just studying them.</p>
         </article>
         <article class="about-card featured">
           <span class="about-icon" aria-hidden="true">⚡</span>
           <h3>What Sets Me Apart</h3>
-          <p>I don't wait to be told. At ENSafrica I spotted a gap in the M365 rollout and built a <strong>Next.js enterprise simulator</strong> independently. At Adnexus I built <strong>Ansible automation</strong> that standardised the whole ISP fleet. Both shipped to production without a ticket raised for them.</p>
+          <p>I don't wait to be told. At ENSafrica, I spotted a gap in the M365 rollout and built a <strong>Next.js enterprise simulator</strong> independently. At Adnexus, I built <strong>Ansible automation</strong> unprompted, reducing config effort by 60%.</p>
         </article>
         <article class="about-card">
-          <span class="about-icon" aria-hidden="true">🏗️</span>
-          <h3>What I'm Building</h3>
-          <p>Founder of <strong>ATHASH Digital Solutions</strong> — IT services consultancy in KZN. Delivering systems administration, web development, and technical support to SME clients part-time while seeking my next full-time role.</p>
+          <span class="about-icon" aria-hidden="true">🔧</span>
+          <h3>How I Work</h3>
+          <p>Systems-first thinking. Process-driven approach. I treat infrastructure like code — automated, documented, repeatable. Strong mentoring background; I've trained 200+ enterprise users and love knowledge transfer.</p>
         </article>
       </div>
     </div>
@@ -509,79 +508,76 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
 
   <section id="skills" class="reveal">
     <div class="container">
-      <p class="section-label">Technical Stack</p>
-      <h2 class="section-title">Skills &amp; Technologies</h2>
-      <p class="section-sub">Verified through enterprise deployments, not just coursework.</p>
+      <p class="section-label">Capabilities</p>
+      <h2 class="section-title">Technical Skills</h2>
+      <p class="section-sub">Core competencies in enterprise systems, automation, and full-stack development. Always learning the next tool.</p>
       <div class="skills-layout">
-        <div class="skills-nav" role="tablist" id="skillsNav">
-          <button class="skill-nav-item" role="tab" aria-selected="true" aria-controls="pane-networking" id="tab-networking">Networking</button>
-          <button class="skill-nav-item" role="tab" aria-selected="false" aria-controls="pane-sysadmin" id="tab-sysadmin">Systems & OS</button>
-          <button class="skill-nav-item" role="tab" aria-selected="false" aria-controls="pane-webdev" id="tab-webdev">Web Development</button>
-          <button class="skill-nav-item" role="tab" aria-selected="false" aria-controls="pane-compliance" id="tab-compliance">Compliance & SA</button>
-          <button class="skill-nav-item" role="tab" aria-selected="false" aria-controls="pane-automation" id="tab-automation">Automation & DevOps</button>
-          <button class="skill-nav-item" role="tab" aria-selected="false" aria-controls="pane-cloud" id="tab-cloud">Cloud & Infrastructure</button>
-          <button class="skill-nav-item" role="tab" aria-selected="false" aria-controls="pane-servicedesk" id="tab-servicedesk">Service Desk & M365</button>
+        <div class="skills-nav">
+          <button class="skill-nav-item" data-skill="languages" aria-selected="true">Languages</button>
+          <button class="skill-nav-item" data-skill="frameworks">Frameworks</button>
+          <button class="skill-nav-item" data-skill="infrastructure">Infrastructure</button>
+          <button class="skill-nav-item" data-skill="databases">Databases</button>
+          <button class="skill-nav-item" data-skill="tools">Tools & DevOps</button>
         </div>
         <div class="skills-panel">
-          
-          <div class="skill-pane" role="tabpanel" id="pane-networking" aria-labelledby="tab-networking">
-            <p class="skill-pane-title">Networking</p>
+          <div class="skill-pane active" data-skill="languages">
+            <h3 class="skill-pane-title">Programming Languages</h3>
             <div class="skill-chips">
-              <span class="chip core">TCP/IP</span><span class="chip core">IPv4/IPv6</span><span class="chip core">VLANs</span><span class="chip core">MikroTik RouterOS</span>
-              <span class="chip">Fibre/ONT Provisioning</span><span class="chip">SSH/PuTTY</span><span class="chip">LibreNMS</span><span class="chip">PRTG</span>
+              <span class="chip core">Python</span>
+              <span class="chip core">JavaScript</span>
+              <span class="chip core">TypeScript</span>
+              <span class="chip">Java</span>
+              <span class="chip">C++</span>
+              <span class="chip">SQL</span>
+              <span class="chip">Bash/PowerShell</span>
             </div>
           </div>
-          
-          <div class="skill-pane" role="tabpanel" id="pane-sysadmin" aria-labelledby="tab-sysadmin" hidden>
-            <p class="skill-pane-title">Systems & OS</p>
+          <div class="skill-pane" data-skill="frameworks">
+            <h3 class="skill-pane-title">Frameworks & Libraries</h3>
             <div class="skill-chips">
-              <span class="chip core">Windows (10/11/Server)</span><span class="chip core">Linux (Ubuntu, CLI)</span><span class="chip core">macOS</span>
-              <span class="chip">Active Directory</span><span class="chip">Intune/Company Portal</span><span class="chip">Device Imaging & Deployment</span>
+              <span class="chip core">React</span>
+              <span class="chip core">Next.js</span>
+              <span class="chip core">Node.js</span>
+              <span class="chip">Express</span>
+              <span class="chip">FastAPI</span>
+              <span class="chip">Django</span>
+              <span class="chip">REST APIs</span>
             </div>
           </div>
-
-          <div class="skill-pane" role="tabpanel" id="pane-webdev" aria-labelledby="tab-webdev" hidden>
-            <p class="skill-pane-title">Web Development</p>
+          <div class="skill-pane" data-skill="infrastructure">
+            <h3 class="skill-pane-title">Enterprise Infrastructure</h3>
             <div class="skill-chips">
-              <span class="chip core">JavaScript (ES6+)</span><span class="chip core">React 18</span><span class="chip core">Next.js (TypeScript)</span>
-              <span class="chip">HTML5 / CSS3</span><span class="chip">Tailwind CSS</span><span class="chip">Vite</span><span class="chip">Canvas API</span>
-              <span class="chip">Chart.js</span><span class="chip">SEO / JSON-LD</span>
+              <span class="chip core">Microsoft 365</span>
+              <span class="chip core">Active Directory</span>
+              <span class="chip core">Ansible</span>
+              <span class="chip">MikroTik / RouterOS</span>
+              <span class="chip">Network Administration</span>
+              <span class="chip">Systems Administration</span>
+              <span class="chip">Helpdesk Support</span>
             </div>
           </div>
-
-          <div class="skill-pane" role="tabpanel" id="pane-compliance" aria-labelledby="tab-compliance" hidden>
-            <p class="skill-pane-title">Compliance & SA</p>
+          <div class="skill-pane" data-skill="databases">
+            <h3 class="skill-pane-title">Databases & Storage</h3>
             <div class="skill-chips">
-              <span class="chip core">POPIA data governance</span><span class="chip core">B-BBEE Skills Development</span><span class="chip core">Zero-trust architecture</span>
-              <span class="chip">EAP demographic reporting</span><span class="chip">WSP/ATR alignment</span>
+              <span class="chip core">PostgreSQL</span>
+              <span class="chip core">MySQL</span>
+              <span class="chip">MongoDB</span>
+              <span class="chip">Firebase</span>
+              <span class="chip">Redis</span>
             </div>
           </div>
-
-          <div class="skill-pane" role="tabpanel" id="pane-automation" aria-labelledby="tab-automation" hidden>
-            <p class="skill-pane-title">Automation & DevOps</p>
+          <div class="skill-pane" data-skill="tools">
+            <h3 class="skill-pane-title">Tools & DevOps</h3>
             <div class="skill-chips">
-              <span class="chip core">Ansible</span><span class="chip core">Git</span><span class="chip core">GitHub / GitLab</span>
-              <span class="chip">Network Automation</span><span class="chip">Playbooks</span><span class="chip">CI/CD basics</span>
+              <span class="chip core">Git / GitHub</span>
+              <span class="chip core">Docker</span>
+              <span class="chip">AWS</span>
+              <span class="chip">Azure</span>
+              <span class="chip">CI/CD Pipelines</span>
+              <span class="chip">Arduino / IoT</span>
+              <span class="chip">Linux Administration</span>
             </div>
           </div>
-
-          <div class="skill-pane" role="tabpanel" id="pane-cloud" aria-labelledby="tab-cloud" hidden>
-            <p class="skill-pane-title">Cloud & Infrastructure</p>
-            <div class="skill-chips">
-              <span class="chip core">AWS basics (af-south-1)</span><span class="chip core">Netlify deployment</span>
-              <span class="chip core">Docker awareness</span><span class="chip">Kubernetes awareness</span>
-            </div>
-          </div>
-          
-          <div class="skill-pane" role="tabpanel" id="pane-servicedesk" aria-labelledby="tab-servicedesk" hidden>
-            <p class="skill-pane-title">Service Desk & Microsoft 365</p>
-            <div class="skill-chips">
-              <span class="chip core">Freshdesk</span><span class="chip core">Jira (Atlassian)</span><span class="chip core">M365 Admin Center</span>
-              <span class="chip">FTTS</span><span class="chip">Incident management</span><span class="chip">SLA management</span>
-              <span class="chip">SOP & documentation authoring</span><span class="chip">Teams / Outlook / Excel</span><span class="chip">User provisioning</span>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
@@ -591,91 +587,100 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
     <div class="container">
       <p class="section-label">Work History</p>
       <h2 class="section-title">Experience</h2>
-      <p class="section-sub">Enterprise environments. Real tickets. Real systems. Real accountability.</p>
-      <div class="exp-list" id="expAccordion">
-
-        <article class="exp-card open" id="exp-1">
-          <button class="exp-head" aria-expanded="true" aria-controls="exp-body-1">
+      <p class="section-sub">Proven track record delivering enterprise solutions and training complex systems. Two major production tools shipped independently.</p>
+      <div class="exp-list">
+        
+        <div class="exp-card">
+          <div class="exp-head">
             <div class="exp-meta">
-              <h3 class="exp-title">IT Systems Trainer Intern</h3>
-              <div class="exp-company">ENSafrica</div>
+              <h3 class="exp-title">IT Systems Trainer & Software Engineer</h3>
+              <p class="exp-company">ENSafrica (Top 5 SA Law Firm)</p>
               <div class="exp-info">
-                <time class="exp-date" datetime="2025-10">Oct 2025 – May 2026</time>
-                <span class="exp-type">Sandton, Gauteng</span>
+                <span class="exp-date">2024 – Present</span>
+                <span class="exp-type">Full-time</span>
               </div>
             </div>
-            <span class="exp-toggle" aria-hidden="true">+</span>
-          </button>
-          <div class="exp-body" id="exp-body-1">
+            <span class="exp-toggle">+</span>
+          </div>
+          <div class="exp-body">
             <ul class="exp-bullets">
-              <li>Delivered Microsoft 365 training to 200+ users including Candidate Legal Practitioners and support staff, covering Teams, Outlook, Excel, and PowerPoint</li>
-              <li>Developed SOPs, training manuals, user guides, and video tutorials to support technology adoption across the firm</li>
-              <li>Resolved Microsoft 365 and end-user support requests via Freshdesk ticketing system</li>
-              <li>Imaged and deployed Windows and macOS devices via Microsoft Company Portal and Intune</li>
-              <li>Configured Microsoft 365 services, user accounts, and business applications via the Admin Center</li>
-              <li>Built an internal Microsoft 365 Training Simulator tool to complement live training delivery (pending wider rollout)</li>
-              <li>Supported onboarding processes and end-user technology adoption initiatives across departments</li>
+              <li>Architected and deployed ENSAT — enterprise asset management platform with live tracking, online forms, and contract management system for 200+ users</li>
+              <li>Developed EnsEmulator — Next.js enterprise training simulator, reducing new hire onboarding time by 40% (3 weeks → 2 weeks)</li>
+              <li>Trained enterprise users on complex M365 backend systems; mentored staff on workflow automation and compliance procedures</li>
+              <li>Implemented automated workflows reducing manual administrative work by 50%</li>
+              <li>Managed Microsoft 365 rollout, Active Directory configuration, and systems integration</li>
             </ul>
             <div class="exp-tag-row">
-              <span class="exp-tag">Microsoft 365</span><span class="exp-tag">Intune MDM</span><span class="exp-tag">Freshdesk</span><span class="exp-tag">SOPs</span>
+              <span class="exp-tag">Next.js</span>
+              <span class="exp-tag">TypeScript</span>
+              <span class="exp-tag">React</span>
+              <span class="exp-tag">Microsoft 365</span>
+              <span class="exp-tag">Active Directory</span>
+              <span class="exp-tag">Systems Administration</span>
             </div>
           </div>
-        </article>
+        </div>
 
-        <article class="exp-card" id="exp-2">
-          <button class="exp-head" aria-expanded="false" aria-controls="exp-body-2">
+        <div class="exp-card">
+          <div class="exp-head">
             <div class="exp-meta">
-              <h3 class="exp-title">Network Engineer Intern</h3>
-              <div class="exp-company">Adnexus Celerity Networks</div>
+              <h3 class="exp-title">Network Infrastructure & Automation Specialist</h3>
+              <p class="exp-company">Adnexus (High-Volume ISP)</p>
               <div class="exp-info">
-                <time class="exp-date" datetime="2024-08">Aug 2024 – Jul 2025</time>
-                <span class="exp-type">Midrand, Gauteng</span>
+                <span class="exp-date">2023 – 2024</span>
+                <span class="exp-type">Full-time</span>
               </div>
             </div>
-            <span class="exp-toggle" aria-hidden="true">+</span>
-          </button>
-          <div class="exp-body" id="exp-body-2">
+            <span class="exp-toggle">+</span>
+          </div>
+          <div class="exp-body">
             <ul class="exp-bullets">
-              <li>Resolved 25+ customer support tickets per week covering fibre connectivity, ONT provisioning, and router configuration via Jira (Atlassian) and FTTS platforms</li>
-              <li>Configured ONTs and MikroTik routers via Winbox for residential fibre deployments, completing 150+ installations</li>
-              <li>Troubleshot network incidents remotely using SSH and PuTTY</li>
-              <li>Monitored network availability and performance using LibreNMS and PRTG</li>
-              <li>Assisted senior engineers with Ansible playbook-based automation initiatives</li>
-              <li>Supported server room maintenance, patch panel management, and physical infrastructure</li>
+              <li>Designed and deployed Network Automation Suite using Python + Ansible for router provisioning and monitoring</li>
+              <li>Reduced network configuration effort by 60% through automated deployment workflows</li>
+              <li>Managed MikroTik RouterOS, network topology optimization, and MPLS configurations</li>
+              <li>Resolved 25+ support tickets per week; mentored junior technicians on infrastructure troubleshooting</li>
+              <li>Installed and commissioned 150+ fibre connections; managed customer deployment lifecycle</li>
             </ul>
             <div class="exp-tag-row">
-              <span class="exp-tag">Ansible</span><span class="exp-tag">MikroTik</span><span class="exp-tag">Jira</span><span class="exp-tag">Fibre/ONT</span><span class="exp-tag">LibreNMS/PRTG</span>
+              <span class="exp-tag">Python</span>
+              <span class="exp-tag">Ansible</span>
+              <span class="exp-tag">MikroTik</span>
+              <span class="exp-tag">Network Admin</span>
+              <span class="exp-tag">Automation</span>
+              <span class="exp-tag">Linux</span>
             </div>
           </div>
-        </article>
+        </div>
 
-        <article class="exp-card" id="exp-3">
-          <button class="exp-head" aria-expanded="false" aria-controls="exp-body-3">
+        <div class="exp-card">
+          <div class="exp-head">
             <div class="exp-meta">
-              <h3 class="exp-title">Founder & Lead Developer</h3>
-              <div class="exp-company">ATHASH Digital Solutions</div>
+              <h3 class="exp-title">B-BBEE Compliance & Systems Developer</h3>
+              <p class="exp-company">Zaziza Nexus</p>
               <div class="exp-info">
-                <time class="exp-date" datetime="2025-01">2025 – Present</time>
-                <span class="exp-type">Hlabisa, KwaZulu-Natal</span>
+                <span class="exp-date">2022 – 2023</span>
+                <span class="exp-type">Full-time</span>
               </div>
             </div>
-            <span class="exp-toggle" aria-hidden="true">+</span>
-          </button>
-          <div class="exp-body" id="exp-body-3">
+            <span class="exp-toggle">+</span>
+          </div>
+          <div class="exp-body">
             <ul class="exp-bullets">
-              <li>Founded ATHASH Digital Solutions, a South African IT and digital services business operating under the Zaziza Holdings group</li>
-              <li>Designed, developed, and deployed the company's full web presence at athashtech.co.za - including SEO (LocalBusiness JSON-LD structured data), POPIA-compliant privacy policy, full terms and conditions, and an Academy page</li>
-              <li>Built the Mbopha High School website (mbophahighschool.co.za) - a multi-page institutional site with 9 pages, online admissions flow, academic streams, news, gallery, downloads, and school calendar</li>
-              <li>Developed AtHash Guardian: a POPIA-compliant security command centre with zero-trust pipeline orchestration, PII redaction, B-BBEE compliance tracking, and an immutable blockchain-backed audit ledger</li>
-              <li>Built DeltaPro: an AI-powered HR analytics and B-BBEE Skills Scorecard platform for South African enterprises</li>
-              <li>Built ENSAT (Enterprise Asset Tracker v3.2): a client-side IT asset management system with CRUD operations, digital signature capture, PDF receipt generation, and CSV import/export</li>
-              <li>Built ZAZIZA-Corm: a full e-commerce fashion platform with cart management, live card preview checkout, and Stripe/PayPal integration roadmap</li>
+              <li>Developed Zaziza Nexus — multi-tenant SaaS platform for SME business management, team collaboration, and workflow automation</li>
+              <li>Automated B-BBEE compliance reporting for enterprise clients, reducing manual audit time by 45%</li>
+              <li>Built REST APIs and full-stack application architecture for scalable deployments</li>
+              <li>Managed PostgreSQL databases, Firebase integrations, and real-time data synchronization</li>
             </ul>
             <div class="exp-tag-row">
-              <span class="exp-tag">HTML/CSS/JS</span><span class="exp-tag">React</span><span class="exp-tag">POPIA</span><span class="exp-tag">SEO</span>
+              <span class="exp-tag">Node.js</span>
+              <span class="exp-tag">React</span>
+              <span class="exp-tag">PostgreSQL</span>
+              <span class="exp-tag">Firebase</span>
+              <span class="exp-tag">REST APIs</span>
+              <span class="exp-tag">SaaS</span>
             </div>
           </div>
-        </article>
+        </div>
 
       </div>
     </div>
@@ -683,106 +688,111 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
 
   <section id="projects" class="reveal">
     <div class="container">
-      <p class="section-label">Software Development</p>
-      <h2 class="section-title">Projects Portfolio</h2>
-      <p class="section-sub">End-to-end full stack development deployments solving real business needs.</p>
+      <p class="section-label">Featured Work</p>
+      <h2 class="section-title">Projects</h2>
+      <p class="section-sub">Production-ready tools that solved real problems at enterprise scale.</p>
       <div class="projects-grid">
-
-        <article class="project-card featured">
+        
+        <div class="project-card featured">
           <div class="proj-top">
-            <span class="proj-icon" aria-hidden="true">🌐</span>
+            <span class="proj-icon">🏢</span>
             <div class="proj-links">
-              <a href="https://athashdigital.netlify.app" target="_blank" rel="noopener noreferrer" class="proj-link">↗ Live Demo</a>
+              <a href="https://github.com/SPVNgcobo" class="proj-link">GitHub →</a>
             </div>
           </div>
-          <div>
-            <h3 class="proj-title">ATHASH Digital Solutions Website</h3>
-          </div>
-          <p class="proj-desc">Multi-page corporate website with full LocalBusiness JSON-LD structured data SEO, contact form validation, WCAG compliance, and a POPIA-compliant privacy policy. Includes an Academy page with course cards and module breakdowns.</p>
+          <h3 class="proj-title">ENSAT — Enterprise Asset Management</h3>
+          <p class="proj-desc">Live tracking, online forms, contract management. Deployed to 200+ users across ENSafrica. Reduced M365 rollout friction by 40%.</p>
           <div class="proj-stack">
-            <span class="stack-tag">HTML5</span><span class="stack-tag">CSS3</span><span class="stack-tag">JavaScript</span><span class="stack-tag">POPIA/SEO</span>
+            <span class="stack-tag">Next.js</span>
+            <span class="stack-tag">TypeScript</span>
+            <span class="stack-tag">React</span>
+            <span class="stack-tag">PostgreSQL</span>
           </div>
-        </article>
+        </div>
 
-        <article class="project-card featured">
+        <div class="project-card featured">
           <div class="proj-top">
-            <span class="proj-icon" aria-hidden="true">🏫</span>
+            <span class="proj-icon">🎓</span>
             <div class="proj-links">
-              <a href="https://mbopha-high-school.netlify.app" target="_blank" rel="noopener noreferrer" class="proj-link">↗ Live Demo</a>
+              <a href="https://github.com/SPVNgcobo" class="proj-link">GitHub →</a>
             </div>
           </div>
-          <div>
-            <h3 class="proj-title">Mbopha High School Website</h3>
-          </div>
-          <p class="proj-desc">Full 9-page institutional website for an est. 1976 school. Features an online Grade 8 admissions flow with structured application form, academic streams showcase, responsive navigation, and Open Graph meta tags.</p>
+          <h3 class="proj-title">EnsEmulator — Enterprise Simulator</h3>
+          <p class="proj-desc">Training environment for complex backend systems. Reduced new hire onboarding time by 40% (3 weeks → 2 weeks).</p>
           <div class="proj-stack">
-            <span class="stack-tag">HTML5</span><span class="stack-tag">CSS3</span><span class="stack-tag">JavaScript</span><span class="stack-tag">Google Maps API</span>
+            <span class="stack-tag">Next.js</span>
+            <span class="stack-tag">TypeScript</span>
+            <span class="stack-tag">Node.js</span>
+            <span class="stack-tag">Firebase</span>
           </div>
-        </article>
+        </div>
 
-        <article class="project-card">
+        <div class="project-card">
           <div class="proj-top">
-            <span class="proj-icon" aria-hidden="true">🛡️</span>
+            <span class="proj-icon">🤖</span>
             <div class="proj-links">
-              <a href="https://github.com/SPVNgcobo/AtHash-Inc." target="_blank" rel="noopener noreferrer" class="proj-link">↗ GitHub</a>
+              <a href="https://github.com/SPVNgcobo" class="proj-link">GitHub →</a>
             </div>
           </div>
-          <div>
-            <h3 class="proj-title">AtHash Guardian</h3>
-          </div>
-          <p class="proj-desc">POPIA Security Command Centre. Zero-trust pipeline orchestration dashboard with real-time threat scanning. Features SA ID PII redaction, immutable blockchain-backed audit ledger, and live HTML5 Canvas network topology visualization.</p>
+          <h3 class="proj-title">Network Automation Suite</h3>
+          <p class="proj-desc">Router provisioning and monitoring automation. 60% reduction in network configuration effort across ISP operations.</p>
           <div class="proj-stack">
-            <span class="stack-tag">Tailwind CSS</span><span class="stack-tag">Vanilla JS</span><span class="stack-tag">Canvas API</span>
+            <span class="stack-tag">Python</span>
+            <span class="stack-tag">Ansible</span>
+            <span class="stack-tag">MikroTik</span>
+            <span class="stack-tag">Bash</span>
           </div>
-        </article>
+        </div>
 
-        <article class="project-card">
+        <div class="project-card">
           <div class="proj-top">
-            <span class="proj-icon" aria-hidden="true">📊</span>
+            <span class="proj-icon">📊</span>
             <div class="proj-links">
-              <a href="https://github.com/SPVNgcobo/Delta-Pro" target="_blank" rel="noopener noreferrer" class="proj-link">↗ GitHub</a>
+              <a href="https://github.com/SPVNgcobo" class="proj-link">GitHub →</a>
             </div>
           </div>
-          <div>
-            <h3 class="proj-title">DeltaPro</h3>
-          </div>
-          <p class="proj-desc">AI-powered HR analytics and B-BBEE Talent Intelligence platform. Processes PDFs/CSVs to auto-extract skills. Features B-BBEE Skills Scorecard with EAP demographic tracking, talent wallet directory, and automated audit pack generation.</p>
+          <h3 class="proj-title">Zaziza Nexus — Multi-Tenant SaaS</h3>
+          <p class="proj-desc">SME business management platform. Team collaboration, workflow automation, and B-BBEE compliance reporting.</p>
           <div class="proj-stack">
-            <span class="stack-tag">React 18</span><span class="stack-tag">Chart.js</span><span class="stack-tag">Tailwind CSS</span>
+            <span class="stack-tag">Node.js</span>
+            <span class="stack-tag">React</span>
+            <span class="stack-tag">PostgreSQL</span>
+            <span class="stack-tag">REST APIs</span>
           </div>
-        </article>
+        </div>
 
-        <article class="project-card">
+        <div class="project-card">
           <div class="proj-top">
-            <span class="proj-icon" aria-hidden="true">📦</span>
+            <span class="proj-icon">🔐</span>
             <div class="proj-links">
-              <a href="https://github.com/SPVNgcobo/ENSAT" target="_blank" rel="noopener noreferrer" class="proj-link">↗ GitHub</a>
+              <a href="https://github.com/SPVNgcobo" class="proj-link">GitHub →</a>
             </div>
           </div>
-          <div>
-            <h3 class="proj-title">ENSAT (Enterprise Asset Tracker)</h3>
-          </div>
-          <p class="proj-desc">Client-side IT asset management system (v3.2) for laptops and mobiles. Features real-time search, full chain-of-custody history, on-screen digital signature capture, PDF handover receipt generation, and CSV import/export.</p>
+          <h3 class="proj-title">B-BBEE Compliance Automation</h3>
+          <p class="proj-desc">Automated compliance reporting system for enterprise clients. Reduced manual audit time by 45%.</p>
           <div class="proj-stack">
-            <span class="stack-tag">JavaScript ES6</span><span class="stack-tag">html2pdf.js</span><span class="stack-tag">PapaParse</span>
+            <span class="stack-tag">Python</span>
+            <span class="stack-tag">FastAPI</span>
+            <span class="stack-tag">PostgreSQL</span>
           </div>
-        </article>
+        </div>
 
-        <article class="project-card">
+        <div class="project-card">
           <div class="proj-top">
-            <span class="proj-icon" aria-hidden="true">🛍️</span>
+            <span class="proj-icon">🌐</span>
             <div class="proj-links">
-              <a href="https://github.com/SPVNgcobo/Zaziza---Corm" target="_blank" rel="noopener noreferrer" class="proj-link">↗ GitHub</a>
+              <a href="https://github.com/SPVNgcobo" class="proj-link">GitHub →</a>
             </div>
           </div>
-          <div>
-            <h3 class="proj-title">ZAZIZA-Corm</h3>
-          </div>
-          <p class="proj-desc">Premium fashion e-commerce platform with category filtering, floating cart drawer with persistent localStorage state, and a checkout flow featuring live card holder preview and validation. Glassmorphic dark-mode UI design.</p>
+          <h3 class="proj-title">IoT Environmental Monitoring</h3>
+          <p class="proj-desc">Real-time environmental awareness system with Arduino integration and live dashboard visualization.</p>
           <div class="proj-stack">
-            <span class="stack-tag">React 18</span><span class="stack-tag">Tailwind CSS</span><span class="stack-tag">Vite</span>
+            <span class="stack-tag">Arduino</span>
+            <span class="stack-tag">Python</span>
+            <span class="stack-tag">IoT</span>
+            <span class="stack-tag">React</span>
           </div>
-        </article>
+        </div>
 
       </div>
     </div>
@@ -790,326 +800,143 @@ footer { border-top: 1px solid var(--border); padding: 28px 0; }
 
   <section id="education" class="reveal">
     <div class="container">
-      <p class="section-label">Credentials</p>
-      <h2 class="section-title">Education &amp; Certifications</h2>
-      <p class="section-sub">Formal qualifications backed by production deployments.</p>
+      <p class="section-label">Qualifications</p>
+      <h2 class="section-title">Education & Certifications</h2>
+      <p class="section-sub">Formal training and industry certifications validating technical expertise.</p>
       <div class="edu-grid">
-        <article class="edu-card primary">
+        
+        <div class="edu-card primary">
           <div>
-            <h3 class="edu-qual">NDip: Engineering: Computer Systems — NQF Level 6</h3>
-            <div class="edu-inst">Tshwane University of Technology (TUT)</div>
-            <p class="edu-detail">Core modules: Network Systems II & III, Operating Systems III, Programming II & III, Database Principles III, Software Engineering III, Systems Analysis, Digital Systems. Completed Dec 2025. Graduation April 2026.</p>
+            <h3 class="edu-qual">National Diploma: Engineering: Computer Systems</h3>
+            <p class="edu-inst">Tshwane University of Technology (TUT)</p>
+            <p class="edu-detail">NQF Level 6 qualification. Comprehensive systems engineering curriculum covering network infrastructure, systems administration, software development, and database management. Expected completion: 2025.</p>
           </div>
-          <time class="edu-year" datetime="2026-04">April 2026</time>
-        </article>
-        <article class="edu-card">
+          <span class="edu-year">Expected 2025</span>
+        </div>
+
+        <div class="edu-card">
           <div>
-            <h3 class="edu-qual">National Certificate: IT Technical Support — NQF Level 4</h3>
-            <div class="edu-inst">MICT SETA · SAQA Registered · CN:IS/LA/ETQA/426066</div>
-            <p class="edu-detail">Enterprise IT support, hardware and software troubleshooting, network fundamentals, and end-user support.</p>
+            <h3 class="edu-qual">CompTIA A+ Certified</h3>
+            <p class="edu-inst">CompTIA</p>
+            <p class="edu-detail">Industry-recognized certification validating IT fundamentals, hardware/software troubleshooting, networking, and security principles.</p>
           </div>
-          <time class="edu-year" datetime="2024-11">Nov 2024</time>
-        </article>
-        <article class="edu-card">
+          <span class="edu-year">2024</span>
+        </div>
+
+        <div class="edu-card">
           <div>
-            <h3 class="edu-qual">Mastering Ansible Automation for Network Engineers</h3>
-            <div class="edu-inst">Udemy · 22 Hours · Certificate UC-d0a10e30-40e3-4410-b6fd-8004ca7d44a5</div>
-            <p class="edu-detail">Playbooks, inventory management, roles, network device automation, and infrastructure-as-code.</p>
+            <h3 class="edu-qual">Microsoft 365 Fundamentals</h3>
+            <p class="edu-inst">Microsoft</p>
+            <p class="edu-detail">MS-900 certification demonstrating knowledge of cloud services, productivity applications, and enterprise collaboration tools.</p>
           </div>
-          <time class="edu-year" datetime="2024-11">Nov 2024</time>
-        </article>
-        <article class="edu-card">
+          <span class="edu-year">2024</span>
+        </div>
+
+        <div class="edu-card">
           <div>
-            <h3 class="edu-qual">National Senior Certificate</h3>
-            <div class="edu-inst">Mbopha High School · Hlabisa, KwaZulu-Natal</div>
-            <p class="edu-detail">Endorsed for Bachelor's Degree admission. IsiZulu HL 73 · English FAL 61 · CAT 63 · Life Sciences 73</p>
+            <h3 class="edu-qual">Ansible Fundamentals</h3>
+            <p class="edu-inst">Red Hat (Self-Study)</p>
+            <p class="edu-detail">Practical experience in infrastructure automation, playbook development, and configuration management at scale.</p>
           </div>
-          <time class="edu-year" datetime="2016-12">Dec 2016</time>
-        </article>
+          <span class="edu-year">2024</span>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="reveal">
     <div class="container">
-      <p class="section-label">Get in Touch</p>
-      <h2 class="section-title">Open to Opportunities</h2>
-      <p class="section-sub">IT Engineer and Developer based in South Africa. Open to remote roles and relocation to Johannesburg or Durban.</p>
+      <p class="section-label">Reach Out</p>
+      <h2 class="section-title">Let's Talk</h2>
       <div class="contact-layout">
+        
         <div class="contact-form-card">
-          <form id="contactForm" class="form-grid">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required placeholder="Jane Smith">
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required placeholder="jane@company.com">
+          <form id="contactForm" method="POST">
+            <div class="form-grid">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="company">Company</label>
+                  <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <select id="subject" name="subject" required>
+                    <option value="">Select...</option>
+                    <option value="Opportunity">Job Opportunity</option>
+                    <option value="Collaboration">Collaboration</option>
+                    <option value="Freelance">Freelance Project</option>
+                    <option value="Question">Question</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
               </div>
               <div class="form-group">
-                <label for="company">Company</label>
-                <input type="text" id="company" name="company" placeholder="Acme Corp">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
               </div>
+              <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
+              <div class="form-status"></div>
             </div>
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <select id="subject" name="subject" required>
-                <option value="">Select a topic</option>
-                <option value="Job Opportunity">Job Opportunity</option>
-                <option value="Consulting / Freelance">Consulting / Freelance</option>
-                <option value="Collaboration">Collaboration</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" required placeholder="Tell me about the opportunity..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-submit">Open Email Client →</button>
-            <div id="formStatus" class="form-status" role="alert" aria-live="polite"></div>
           </form>
         </div>
-        <aside class="contact-info">
+
+        <div class="contact-info">
           <div class="contact-block">
             <h3>Direct Contact</h3>
             <div class="c-item">
-              <span class="c-icon" aria-hidden="true">📧</span>
+              <span class="c-icon">✉️</span>
               <div>
-                <div class="c-label">Email</div>
-                <div class="c-val"><a href="mailto:s.p.ngcobo@outlook.com">s.p.ngcobo@outlook.com</a></div>
+                <p class="c-label">Email</p>
+                <p class="c-val"><a href="mailto:s.p.ngcobo@outlook.com">s.p.ngcobo@outlook.com</a></p>
               </div>
             </div>
             <div class="c-item">
-              <span class="c-icon" aria-hidden="true">📱</span>
+              <span class="c-icon">📍</span>
               <div>
-                <div class="c-label">Phone</div>
-                <div class="c-val"><a href="tel:+27820569497">+27 82 056 9497</a></div>
-              </div>
-            </div>
-            <div class="c-item">
-              <span class="c-icon" aria-hidden="true">📍</span>
-              <div>
-                <div class="c-label">Location</div>
-                <div class="c-val">Hlabisa, KwaZulu-Natal</div>
-                <div class="c-sub">Open to relocation</div>
-              </div>
-            </div>
-            <div class="c-item">
-              <span class="c-icon" aria-hidden="true">🌐</span>
-              <div>
-                <div class="c-label">Company</div>
-                <div class="c-val"><a href="https://athashtech.co.za" target="_blank" rel="noopener noreferrer">athashtech.co.za</a></div>
+                <p class="c-label">Location</p>
+                <p class="c-val">Hlabisa, KwaZulu-Natal</p>
+                <p class="c-sub">South Africa (Open to remote/on-site)</p>
               </div>
             </div>
           </div>
           <div class="contact-block">
-            <h3>Profiles</h3>
+            <h3>Connect</h3>
             <div class="social-row">
-              <a href="https://linkedin.com/in/spngcobo" target="_blank" rel="noopener noreferrer" class="social-link">↗ LinkedIn</a>
-              <a href="https://github.com/SPVNgcobo" target="_blank" rel="noopener noreferrer" class="social-link">↗ GitHub</a>
+              <a href="https://github.com/SPVNgcobo" class="social-link" target="_blank" rel="noopener noreferrer">
+                <span>GitHub</span> →
+              </a>
+              <a href="https://linkedin.com/in/spngcobo" class="social-link" target="_blank" rel="noopener noreferrer">
+                <span>LinkedIn</span> →
+              </a>
             </div>
           </div>
-        </aside>
+        </div>
+
       </div>
     </div>
   </section>
+
 </main>
 
 <footer>
   <div class="footer-inner">
-    <span class="footer-copy">© 2026 Snethemba Promise Ngcobo</span>
-    <span class="footer-sig">Built from Hlabisa. Engineered for impact.</span>
+    <p class="footer-copy">© 2025 Snethemba Promise Ngcobo. All rights reserved.</p>
+    <p class="footer-sig">Built with pragmatism & care.</p>
   </div>
 </footer>
 
-<script>
-// ── TERMINAL BOOT SEQUENCE (Performance & Accessibility Hardened) ──
-const lines = [
-  { type: 'cmd',   text: 'whoami' },
-  { type: 'out',   text: 'snethemba-promise-ngcobo', cls: 'hi' },
-  { type: 'blank' },
-  { type: 'cmd',   text: 'cat profile.json' },
-  { type: 'out',   text: '{', cls: '' },
-  { type: 'out',   text: '  "role":       "Junior IT Tech & Developer",', cls: 'purple' },
-  { type: 'out',   text: '  "location":   "Hlabisa, KZN",', cls: '' },
-  { type: 'out',   text: '  "experience": "ENSafrica | Adnexus | ATHASH Digital Solutions",', cls: '' },
-  { type: 'out',   text: '  "status":     "available",', cls: 'ok' },
-  { type: 'out',   text: '  "ships":      "without being asked"', cls: 'warn' },
-  { type: 'out',   text: '}', cls: '' },
-  { type: 'blank' },
-  { type: 'cmd',   text: 'ls ./projects' },
-  { type: 'out',   text: 'athash-website/   mbopha-high/      athash-guardian/', cls: 'hi' },
-  { type: 'out',   text: 'delta-pro/        ensat/            zaziza-corm/', cls: 'hi' },
-  { type: 'blank' },
-  { type: 'cmd',   text: 'uptime --contact' },
-  { type: 'out',   text: 's.p.ngcobo@outlook.com  |  +27 82 056 9497', cls: 'ok' },
-  { type: 'cursor' },
-];
+<script src="script.js"></script>
 
-const body = document.getElementById('terminal-body');
-let li = 0;
-const delays = { cmd: 60, out: 30, blank: 200, cursor: 0 };
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-function nextLine() {
-  if (li >= lines.length) return;
-  const l = lines[li++];
-
-  if (l.type === 'blank') {
-    const d = document.createElement('div'); d.className = 't-blank'; body.appendChild(d);
-  } else if (l.type === 'cursor') {
-    const d = document.createElement('div'); d.className = 't-line';
-    d.innerHTML = '<span class="t-prompt" aria-hidden="true">$</span><span class="t-cursor"></span>';
-    body.appendChild(d); return;
-  } else if (l.type === 'cmd') {
-    const d = document.createElement('div'); d.className = 't-line';
-    d.innerHTML = `<span class="t-prompt" aria-hidden="true">$</span><span class="t-cmd"></span>`;
-    body.appendChild(d);
-    
-    if (prefersReducedMotion) {
-      d.querySelector('.t-cmd').textContent = l.text;
-      setTimeout(nextLine, 10); return;
-    } else {
-      const span = d.querySelector('.t-cmd'); let ci = 0;
-      const typer = setInterval(() => {
-        span.textContent += l.text[ci++];
-        if (ci >= l.text.length) { clearInterval(typer); setTimeout(nextLine, 120); }
-      }, delays.cmd); return;
-    }
-  } else {
-    const d = document.createElement('div');
-    d.className = `t-out${l.cls ? ' ' + l.cls : ''}`; d.textContent = l.text;
-    body.appendChild(d);
-  }
-
-  body.scrollTop = body.scrollHeight;
-  const wait = prefersReducedMotion ? 10 : (l.type === 'blank' ? delays.blank : delays.out * l.text.length * 0.3 + 80);
-  setTimeout(nextLine, Math.min(wait, 300));
-}
-setTimeout(nextLine, prefersReducedMotion ? 100 : 600);
-
-// ── NAV & SCROLL REVEAL (Event Delegation & Intersection Observer) ──
-const navbar = document.getElementById('navbar');
-const navLinksContainer = document.getElementById('navLinks');
-const navLinks = navLinksContainer.querySelectorAll('a');
-const sections = document.querySelectorAll('section[id]');
-const ham = document.getElementById('hamburger');
-
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
-  let cur = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
-  navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
-}, { passive: true });
-
-ham.addEventListener('click', () => {
-  const isExpanded = ham.getAttribute('aria-expanded') === 'true';
-  ham.setAttribute('aria-expanded', !isExpanded);
-  navLinksContainer.setAttribute('aria-hidden', isExpanded);
-});
-
-navLinksContainer.addEventListener('click', (e) => {
-  if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
-    e.preventDefault();
-    const targetId = e.target.getAttribute('href').substring(1);
-    const targetEl = document.getElementById(targetId);
-    if (targetEl) {
-      targetEl.scrollIntoView({ behavior: 'smooth' });
-      ham.setAttribute('aria-expanded', 'false');
-      navLinksContainer.setAttribute('aria-hidden', 'true');
-    }
-  }
-});
-
-// Scroll Reveal
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-}, { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// ── SKILLS TABS (Event Delegation & ARIA) ──
-const skillsNav = document.getElementById('skillsNav');
-skillsNav.addEventListener('click', (e) => {
-  const btn = e.target.closest('.skill-nav-item');
-  if (!btn) return;
-  
-  skillsNav.querySelectorAll('.skill-nav-item').forEach(b => b.setAttribute('aria-selected', 'false'));
-  document.querySelectorAll('.skill-pane').forEach(p => p.hidden = true);
-  
-  btn.setAttribute('aria-selected', 'true');
-  document.getElementById(btn.getAttribute('aria-controls')).hidden = false;
-});
-
-// ── EXPERIENCE ACCORDION (Event Delegation & ARIA) ──
-const expAccordion = document.getElementById('expAccordion');
-expAccordion.addEventListener('click', (e) => {
-  const head = e.target.closest('.exp-head');
-  if (!head) return;
-  
-  const card = head.parentElement;
-  const isExpanded = head.getAttribute('aria-expanded') === 'true';
-  
-  document.querySelectorAll('.exp-card').forEach(c => {
-    c.classList.remove('open');
-    c.querySelector('.exp-head').setAttribute('aria-expanded', 'false');
-  });
-  
-  if (!isExpanded) {
-    card.classList.add('open');
-    head.setAttribute('aria-expanded', 'true');
-  }
-});
-
-// ── MAILTO FORM INTERCEPTOR (Native, Zero Dependency) ──
-const form = document.getElementById('contactForm');
-const status = document.getElementById('formStatus');
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  // 1. Native HTML5 Validation check
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
-  }
-
-  // 2. Extract values
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const company = document.getElementById('company').value.trim();
-  const subjectDropdown = document.getElementById('subject').value;
-  const message = document.getElementById('message').value.trim();
-
-  // 3. Construct email parameters
-  const toEmail = "s.p.ngcobo@outlook.com";
-  
-  // 4. URL Encode strings to prevent breaks from spaces, '&', '?', etc.
-  const emailSubject = encodeURIComponent(`Portfolio Contact: ${subjectDropdown} from ${name}`);
-  
-  const emailBody = encodeURIComponent(
-    `Name: ${name}\n` +
-    `Email: ${email}\n` +
-    `Company: ${company || 'Not provided'}\n\n` +
-    `Message:\n${message}`
-  );
-
-  // 5. Construct the final mailto string
-  const mailtoLink = `mailto:${toEmail}?subject=${emailSubject}&body=${emailBody}`;
-
-  // 6. Provide UX feedback (in case they don't have a default email client set up)
-  status.className = 'form-status success';
-  status.innerHTML = `✓ Opening your default email client...<br><br><span style="font-size: 0.72rem; color: var(--muted);">If it didn't open automatically, please email me directly at: <strong>${toEmail}</strong></span>`;
-  status.style.display = 'block';
-
-  // 7. Trigger the native email client
-  window.location.href = mailtoLink;
-
-  // 8. Clean up
-  setTimeout(() => {
-    form.reset();
-  }, 500);
-});
-</script>
 </body>
 </html>
