@@ -1,176 +1,202 @@
-// Typewriter Effect (Accessibility Aware)
-const phrases = ["IT Systems Engineer", "Software Developer", "Network Automator"];
-let pI = 0, cI = 0, isDel = false;
-const el = document.getElementById('typing-text');
+// ── TERMINAL BOOT SEQUENCE (Accessibility Hardened) ──
+const lines = [
+  { type: 'cmd',   text: 'whoami' },
+  { type: 'out',   text: 'snethemba-promise-ngcobo', cls: 'hi' },
+  { type: 'blank' },
+  { type: 'cmd',   text: 'cat profile.json' },
+  { type: 'out',   text: '{', cls: '' },
+  { type: 'out',   text: '  "role":       "Junior IT Tech & Developer",', cls: 'purple' },
+  { type: 'out',   text: '  "location":   "Hlabisa, KZN",', cls: '' },
+  { type: 'out',   text: '  "ships":      "without being asked",', cls: 'warn' },
+  { type: 'out',   text: '  "status":     "available"', cls: 'ok' },
+  { type: 'out',   text: '}', cls: '' },
+  { type: 'blank' },
+  { type: 'cmd',   text: 'ls ./projects' },
+  { type: 'out',   text: 'ENSAT/  EnsEmulator/  Network-Automation/', cls: 'hi' },
+  { type: 'out',   text: 'Zaziza-Nexus/  B-BBEE-Automation/  IoT-Monitoring/', cls: 'hi' },
+  { type: 'blank' },
+  { type: 'cmd',   text: 'contact --reach-out' },
+  { type: 'out',   text: 's.p.ngcobo@outlook.com', cls: 'ok' },
+  { type: 'cursor' },
+];
+
+const body = document.getElementById('terminal-body');
+let li = 0;
+const delays = { cmd: 60, out: 30, blank: 200, cursor: 0 };
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-function type() {
+function nextLine() {
+  if (li >= lines.length) return;
+  const l = lines[li++];
+
+  if (l.type === 'blank') {
+    const d = document.createElement('div'); 
+    d.className = 't-blank'; 
+    body.appendChild(d);
+  } else if (l.type === 'cursor') {
+    const d = document.createElement('div'); 
+    d.className = 't-line';
+    d.innerHTML = '<span class="t-prompt">$</span><span class="t-cursor"></span>';
+    body.appendChild(d); 
+    return;
+  } else if (l.type === 'cmd') {
+    const d = document.createElement('div'); 
+    d.className = 't-line';
+    d.innerHTML = `<span class="t-prompt">$</span><span class="t-cmd"></span>`;
+    body.appendChild(d);
+    
     if (prefersReducedMotion) {
-        el.textContent = phrases[0]; // Fallback for motion sensitivity
-        return;
-    }
-    
-    const curr = phrases[pI];
-    el.textContent = isDel ? curr.substring(0, cI - 1) : curr.substring(0, cI + 1);
-    isDel ? cI-- : cI++;
-    
-    if (!isDel && cI === curr.length) {
-        isDel = true;
-        setTimeout(type, 2000);
-    } else if (isDel && cI === 0) {
-        isDel = false;
-        pI = (pI + 1) % phrases.length;
-        setTimeout(type, 500);
+      d.querySelector('.t-cmd').textContent = l.text;
+      setTimeout(nextLine, 10); 
+      return;
     } else {
-        setTimeout(type, isDel ? 50 : 100);
+      const span = d.querySelector('.t-cmd'); 
+      let ci = 0;
+      const typer = setInterval(() => {
+        span.textContent += l.text[ci++];
+        if (ci >= l.text.length) { 
+          clearInterval(typer); 
+          setTimeout(nextLine, 120); 
+        }
+      }, delays.cmd); 
+      return;
     }
+  } else {
+    const d = document.createElement('div');
+    d.className = `t-out${l.cls ? ' ' + l.cls : ''}`; 
+    d.textContent = l.text;
+    body.appendChild(d);
+  }
+
+  body.scrollTop = body.scrollHeight;
+  const wait = prefersReducedMotion ? 10 : (l.type === 'blank' ? delays.blank : delays.out * l.text.length * 0.3 + 80);
+  setTimeout(nextLine, Math.min(wait, 300));
 }
-type();
 
-// Scroll Reveal
-const reveal = () => {
-    const els = document.querySelectorAll('.reveal');
-    els.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) el.classList.add('active');
-    });
-};
-window.addEventListener('scroll', reveal, { passive: true });
-reveal();
+setTimeout(nextLine, prefersReducedMotion ? 100 : 600);
 
-// Nav Scroll
-const nav = document.getElementById('navbar');
+// ── NAVBAR & SCROLL MANAGEMENT ──
+const navbar = document.getElementById('navbar');
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+const navAnchors = navLinks.querySelectorAll('a');
+
+// Scroll event
 window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 50);
-}, { passive: true });
-
-// Hamburger (ARIA compliant)
-const ham = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-ham.addEventListener('click', () => {
-    const isActive = navLinks.classList.toggle('active');
-    ham.setAttribute('aria-expanded', isActive);
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
 });
 
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-        e.preventDefault();
-        const t = document.querySelector(a.getAttribute('href'));
-        if (t) {
-            t.scrollIntoView({ behavior: 'smooth' });
-            navLinks.classList.remove('active');
-            ham.setAttribute('aria-expanded', 'false');
-        }
-    });
+// Hamburger menu toggle
+hamburger.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('active');
+  hamburger.setAttribute('aria-expanded', isOpen);
 });
 
-// Particle System (Performance & Accessibility Handled)
-const canvas = document.getElementById('particles-canvas');
-if (canvas && !prefersReducedMotion) {
-    const ctx = canvas.getContext('2d');
-    let w = canvas.width = window.innerWidth;
-    let h = canvas.height = window.innerHeight;
+// Close menu when link clicked
+navAnchors.forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', false);
+  });
+});
 
-    class Particle {
-        constructor() {
-            this.x = Math.random() * w;
-            this.y = Math.random() * h;
-            this.vx = (Math.random() - 0.5) * 0.5;
-            this.vy = (Math.random() - 0.5) * 0.5;
-            this.r = Math.random() * 2 + 1;
-        }
-        update() {
-            this.x += this.vx;
-            this.y += this.vy;
-            if (this.x < 0 || this.x > w) this.vx *= -1;
-            if (this.y < 0 || this.y > h) this.vy *= -1;
-        }
-        draw() {
-            ctx.fillStyle = 'rgba(0, 217, 255, 0.6)';
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-            ctx.fill();
-        }
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  });
+});
 
-    const particles = Array.from({ length: 80 }, () => new Particle());
+// ── SCROLL REVEAL (Intersection Observer) ──
+const revealElements = document.querySelectorAll('.reveal');
+const revealOptions = {
+  threshold: 0.15,
+  rootMargin: '0px 0px -100px 0px'
+};
 
-    function animate() {
-        ctx.clearRect(0, 0, w, h);
-        particles.forEach((p, i) => {
-            p.update();
-            p.draw();
-            for (let j = i + 1; j < particles.length; j++) {
-                const dx = p.x - particles[j].x;
-                const dy = p.y - particles[j].y;
-                const d = Math.sqrt(dx * dx + dy * dy);
-                if (d < 150) {
-                    ctx.beginPath();
-                    ctx.strokeStyle = `rgba(0, 217, 255, ${0.2 * (1 - d / 150)})`;
-                    ctx.lineWidth = 0.5;
-                    ctx.moveTo(p.x, p.y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.stroke();
-                }
-            }
-        });
-        requestAnimationFrame(animate);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
     }
-    animate();
+  });
+}, revealOptions);
 
-    window.addEventListener('resize', () => {
-        w = canvas.width = window.innerWidth;
-        h = canvas.height = window.innerHeight;
-    });
-}
+revealElements.forEach(el => observer.observe(el));
 
-// Native Mailto Contact Form Handler (Zero Dependency)
+// ── SKILL TABS (Vanilla JS) ──
+const skillButtons = document.querySelectorAll('.skill-nav-item');
+const skillPanes = document.querySelectorAll('.skill-pane');
+
+skillButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const skillType = button.getAttribute('data-skill');
+    
+    // Remove active from all buttons and panes
+    skillButtons.forEach(b => b.classList.remove('active'));
+    skillPanes.forEach(p => p.classList.remove('active'));
+    
+    // Add active to clicked button and matching pane
+    button.classList.add('active');
+    document.querySelector(`.skill-pane[data-skill="${skillType}"]`)?.classList.add('active');
+  });
+});
+
+// ── EXPERIENCE ACCORDION ──
+const expCards = document.querySelectorAll('.exp-card');
+
+expCards.forEach(card => {
+  const header = card.querySelector('.exp-head');
+  header.addEventListener('click', () => {
+    card.classList.toggle('open');
+  });
+});
+
+// ── CONTACT FORM (Option A: mailto) ──
 const form = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // HTML5 Validation check
-    if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-    }
-    
-    // Show loading state
-    const submitBtn = form.querySelector('.btn-submit');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<span>Opening Client...</span>';
-    submitBtn.disabled = true;
-    
-    // Extract & Encode Values
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const company = document.getElementById('company').value.trim();
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value.trim();
-    
-    const toEmail = "s.p.ngcobo@outlook.com";
-    const emailSubject = encodeURIComponent(`Portfolio Contact: ${subject} from ${name}`);
-    const emailBody = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\nCompany: ${company || 'Not provided'}\n\nMessage:\n${message}`
-    );
-    
-    const mailtoLink = `mailto:${toEmail}?subject=${emailSubject}&body=${emailBody}`;
-    
-    // Success UX State
-    formStatus.className = 'form-status success';
-    formStatus.innerHTML = `✓ Opening your default email client...<br><span style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-top: 8px;">If it didn't open automatically, email me directly at: <strong>${toEmail}</strong></span>`;
-    formStatus.style.display = 'block';
-    
-    // Trigger native client
-    window.location.href = mailtoLink;
-    
-    // Reset UI
-    setTimeout(() => {
-        form.reset();
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-    }, 2000);
+  e.preventDefault();
+  
+  // HTML5 Validation
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+  
+  // Extract values
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const company = document.getElementById('company').value.trim();
+  const subject = document.getElementById('subject').value;
+  const message = document.getElementById('message').value.trim();
+  
+  // Build mailto link
+  const toEmail = 's.p.ngcobo@outlook.com';
+  const mailtoSubject = encodeURIComponent(`Portfolio Contact: ${subject} from ${name}`);
+  const mailtoBody = encodeURIComponent(
+    `Name: ${name}\nEmail: ${email}\nCompany: ${company || 'Not provided'}\n\nMessage:\n${message}`
+  );
+  
+  const mailtoLink = `mailto:${toEmail}?subject=${mailtoSubject}&body=${mailtoBody}`;
+  
+  // Show success status
+  formStatus.className = 'form-status success';
+  formStatus.innerHTML = '✓ Opening your email client...';
+  formStatus.style.display = 'block';
+  
+  // Trigger mailto
+  window.location.href = mailtoLink;
+  
+  // Reset form
+  setTimeout(() => {
+    form.reset();
+    formStatus.style.display = 'none';
+  }, 1500);
 });
